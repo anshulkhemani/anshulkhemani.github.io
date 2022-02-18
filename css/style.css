@@ -5,7 +5,14 @@ body {
     color: #ffffff;
     text-align: justify;
     background: #26262d;
+    min-width: 437px;
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@media (max-width: 400px) {
+    body{
+        text-align: left;
+    }
 }
 
 a {
@@ -37,7 +44,9 @@ a:focus {
 }
 
 .wrapper .sidebar {
-    position: relative;
+    position: fixed;
+    top:0;
+    z-index: 1;
     width: 100%;
     float: left;
     background: #31313a;
@@ -47,7 +56,7 @@ a:focus {
     position: relative;
     width: 100%;
     padding: 15px;
-    float: left;
+    float: left;    
     background: #26262d;
 }
 
@@ -101,9 +110,60 @@ a:focus {
     transition: margin 200ms ease-out;
 }
 
+@media (max-width: 768px) {
+    .header {
+        margin-top: 60px;
+    }
+}
+
+.social-mobile
+{   
+    display: none;
+    width: 100%;
+    margin: auto;
+    padding: 15px;
+    font-size: 30px;
+    text-align: center;
+    background: #31313a;
+}
+@media (max-width:768px)
+{
+    .social-mobile
+    {
+        display: block;
+    }
+    .social-mobile a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        padding: 5px 0;
+        margin: 0 15px 15px 0;
+        text-align: center;
+        font-size: 18px;
+        color: #ffffff;
+        background: #4a81f7;
+    }
+    
+    .social-mobile a:last-child {
+        margin-right: 0;
+    }
+
+    .contact .contact-info {
+        margin-bottom: 20px;
+    }
+    
+    .social-mobile a:active {
+        color: #4a81f7;
+        background: #31313a;
+    }
+}
+
 @media (min-width: 768px) {
     .wrapper .content {
         padding: 30px 0px 30px 30px;
+    }
+    .contact .contact-info {
+        margin-bottom: 100px;
     }
     
     .wrapper .content::before,
@@ -225,6 +285,14 @@ a:focus {
     }
 }
 
+@media(max-height: 570px)
+{
+    .wrapper .sidebar {
+        margin: 0;
+        height: 85%;
+    }
+}
+
 @media (min-width: 992px) {
     .wrapper .sidebar {
         margin: 0;
@@ -247,6 +315,7 @@ a:focus {
     
     .sidebar .sidebar-footer {
         display: block;
+        margin: 0;
     }
 }
 
@@ -310,6 +379,7 @@ a:focus {
 .header {
     position: relative;
     background: #31313a;
+    min-width: 300px;
 }
 
 .header .content-inner {
@@ -349,6 +419,7 @@ a:focus {
 
 .large-btn .content-inner {
     font-size: 0;
+    min-width: 300px;
     border-bottom: 30px solid #26262d;
 }
 
@@ -427,6 +498,7 @@ a:focus {
 .about {
     position: relative;
     padding: 60px 30px;
+    width: 100%;
     min-width: 300px;
     background: #31313a;
     border-bottom: 30px solid #26262d;
@@ -549,15 +621,6 @@ a:focus {
     border-bottom: 1px solid;
     border-image: linear-gradient(to right, #4a81f7c0, rgba(10, 39, 80, 0.13));
     border-image-slice: 1;
-}
-
-@media(min-width:700px) {
-    .vertical-border
-    {
-        border:1px;
-        border-style: solid;
-        border-image: linear-gradient(to bottom, #4a81f7c0, rgba(0, 0, 0, 0)) 1 100%;
-    }
 }
 
 .about-margin{
@@ -752,12 +815,15 @@ a:focus {
 .miscellaneous
 {
     margin-left: 17px;
+    width: 100%;
     font-size: 20px;
 }
 
 .miscellaneous-item
 {
-    margin-left: 20px;
+    margin-left: 15px;
+    margin-right: 15px;
+    display: flex;
     text-align: left;
 }
 
@@ -766,7 +832,27 @@ a:focus {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-shrink: inherit;
+    flex-wrap:wrap;
+}
+
+@media(max-width:710px) {
+    .skill-arrangement{
+        width: 80%;
+        margin: 0 auto;
+    }
+    .language-margin{
+        margin-top: 30px;
+    }
+}
+
+@media(min-width:710px) {
+    .vertical-border
+    {
+        border:1px;
+        border-style: solid;
+        border-image: linear-gradient(to bottom, #4a81f7c0, rgba(0, 0, 0, 0)) 1 100%;
+    }
 }
 
 .service .srv-col i {
@@ -805,6 +891,7 @@ a:focus {
 /**********************************/
 .portfolio {
     position: relative;
+    min-width: 300px;
     padding: 60px 30px 30px 30px;
     background: #31313a;
     border-bottom: 30px solid #26262d;
@@ -1103,7 +1190,6 @@ a:focus {
 .contact .contact-info {
     position: relative;
     width: 100%;
-    margin-bottom: 100px;
 }
 
 .contact .contact-info p {
