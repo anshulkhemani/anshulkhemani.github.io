@@ -934,6 +934,13 @@ a:focus {
     overflow: hidden;
 }
 
+@media (max-width:590px){
+    .portfolio-container {
+        margin:auto; 
+        width: 85%;
+    }
+}
+
 .portfolio .portfolio-item figure {
     background: #31313a;
     overflow: hidden;
@@ -1053,6 +1060,13 @@ a:focus {
     position: relative;
     padding: 60px 30px;
     background: url(../img/quote.png) right bottom no-repeat;
+}
+
+@media (max-width:768px)
+{
+    .review .content-inner {
+        background-size:80px;
+    }
 }
 
 .review .review-text p {
