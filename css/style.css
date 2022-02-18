@@ -285,7 +285,7 @@ a:focus {
     }
 }
 
-@media(max-height: 570px)
+@media screen and (max-height: 570px) and (min-width: 992px)
 {
     .wrapper .sidebar {
         margin: 0;
